@@ -16,7 +16,7 @@ COPY . .
 # Expose the port your app will run on (e.g., 3000)
 EXPOSE 3000
 
-# Run the app when the container starts //wisdgsbsBdbnbnfinflbjjlbfbjnfbjidbjdjdfjnkbn
+# Run the app when the container starts 
 # CMD ["node", "index.js"]
 CMD ["npm", "start"]
 

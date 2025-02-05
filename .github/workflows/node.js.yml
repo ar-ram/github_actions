@@ -45,13 +45,13 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker build -t vaishnavi681/my-node-app:latest .
+        docker build -t ram0810/my-node-app:latest .
 
     - name: Push Docker image to Docker Hub
       run: |
-        docker push vaishnavi681/my-node-app:latest
+        docker push ram0810/my-node-app:latest
 
     - name: Pull Docker image and run container
       run: |
-        docker pull vaishnavi681/my-node-app:latest
-        docker run -d -p 3000:3000 vaishnavi681/my-node-app:latest
+        docker pull ram0810/my-node-app:latest
+        docker run -d -p 3000:3000 ram0810/my-node-app:latest

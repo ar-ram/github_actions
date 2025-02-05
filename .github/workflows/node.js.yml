@@ -53,5 +53,7 @@ jobs:
 
     - name: Pull Docker image and run container
       run: |
+        docker stop automate
         docker pull ram0810/my-node-app:latest
-        docker run -d -p 3000:3000 ram0810/my-node-app:latest
+        docker run -d --name automate -p 3000:3000 ram0810/my-node-app:latest
+

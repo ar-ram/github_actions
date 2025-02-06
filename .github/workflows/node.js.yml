@@ -74,7 +74,7 @@ jobs:
             docker rm "$CONTAINER_ON_PORT"
           fi
  
-          # Run the Docker container on Azure VM with a unique name ..
+          # Run the Docker container on Azure VM with a unique name ....
           UNIQUE_CONTAINER_NAME="my-node-app-$(date +%s)"
           docker run -d -p 3000:3000 --name $UNIQUE_CONTAINER_NAME ram0810/my-node-app:latest
  

@@ -44,11 +44,11 @@ jobs:
  
     - name: Build Docker image
       run: |
-        docker build -t sandeep3414/my-node-app:latest .
+        docker build -t ram0810/my-node-app:latest .
  
     - name: Push Docker image to Docker Hub
       run: |
-        docker push sandeep3414/my-node-app:latest
+        docker push ram0810/my-node-app:latest
  
     - name: SSH into Azure VM and deploy the application
       run: |
@@ -64,7 +64,7 @@ jobs:
         ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa azureuser@${{ secrets.AZURE_VM_PUBLIC_IP }} << 'EOF'
           
           # Pull the latest Docker image
-          docker pull sandeep3414/my-node-app:latest
+          docker pull ram0810/my-node-app:latest
  
           # Remove any running container using port 3000
           CONTAINER_ON_PORT=$(docker ps -q --filter "publish=3000")
@@ -74,8 +74,8 @@ jobs:
             docker rm "$CONTAINER_ON_PORT"
           fi
  
-          # Run the Docker container on Azure VM with a unique name
+          # Run the Docker container on Azure VM with a unique name ..
           UNIQUE_CONTAINER_NAME="my-node-app-$(date +%s)"
-          docker run -d -p 3000:3000 --name $UNIQUE_CONTAINER_NAME sandeep3414/my-node-app:latest
+          docker run -d -p 3000:3000 --name $UNIQUE_CONTAINER_NAME ram0810/my-node-app:latest
  
         EOF
